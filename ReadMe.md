@@ -1,8 +1,27 @@
-This is to just to build a simple python docker image by using volumes. So that it can used for my kubernetes handson
+# This repository contains some of the handson examples that I have tried with some extra and new implementations
+Repo is divided into following folder structure
+```bash
+.
+├── ReadMe.md
+├── data  #this is where I store sample data files, this folder will be used as a volume
+│   └── ratings.csv
+├── dockerfiles #this folder contains various Dockerfiles required for my hands-on practice. All images are simple images
+│   └── Dockerfile_without_volumes
+├── how_to_run #Markdown files here will explain each step by step proc for running the pods or deployments (including docker)
+│   └── steps_without_volumes.md
+├── kubernetes #This folder contains all the files required for kubernetes
+│   ├── KUBERNETES-Cheat-Sheet-2022.pdf
+│   ├── config
+│   │   └── python-program-config-map.yaml
+│   └── python-kubernetes-deployment-without-volumes.yaml
+├── requirements.txt #a requirements file for dockerimages for python packages
+├── scripts #this file contains python scripts that can be used, this folder will also be used as a volume to fetch code
+│   └── kub_sample_without_volumes.py
+└── shell #this folder contains all the shell scripts that are required for my practice
+    └── entrypoint_without_volumes.sh
+```
 
-To build an image run following <br>
-```docker build --tag sri-dock-vol .```
 
-After building an image, run docker run to check the container
+## Background
+This repository may contain some sample and simple docker and kubernetes YAML files, the motivation for me behind this is to try out different things and save it here with all the steps included on how to perform the process. So it will be useful for my reference in future.
 
-```docker run -d -v $(pwd)/data/:/home/usr/pythonsample/data/ -v $(pwd)/scripts/:/home/usr/pythonsample/scripts/ sri-dock-vol```
