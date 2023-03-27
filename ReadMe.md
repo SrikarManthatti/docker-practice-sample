@@ -1,4 +1,8 @@
 # This repository contains some of the handson examples that I have tried with some extra and new implementations
+## Pre-requisites 
+1. `Docker` to be installed. [Guide to docker setup](https://docs.docker.com/get-docker/)
+2. I have used `minikube` for kubernetes [Guide to Minikube setup](https://minikube.sigs.k8s.io/docs/start/)
+
 Repo is divided into following folder structure
 ```bash
 .

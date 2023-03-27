@@ -1,3 +1,21 @@
+## Scenario
+
+In this scenario the following are covered 
+1. Create a docker python image which contains artifacts in it
+2. Scripting and creating a kubernetes `configmap` with two parameters in it
+3. Scripting and creating a kubernetes `deployment`, which refers to the values in `configmap` as environment variables
+4. After reading the values from `configmap`, passing those as the parameters to the python artifact inside the docker container
+
+## Required files
+
+dockerfiles/Dockerfile_without_volumes..........................==> This file contains the docker image script <br>
+kubernetes/config/python-program-config-map.yaml................==> This file contains the configuration values/parameters required for by the artifact and kubernetes deployment file <br>
+kubernetes/python-kubernetes-deployment-without_volumes.yaml....==> This file contains the deployment scripts for kub pods<br>
+scripts/kub_sample_without_volumes.py...........................==> This file contains the python scripts that will just print some values and parameters <br>
+shell/entrypoint_without_volumes.sh.............................==> This file contains the shell script which will accept the arguments (command line) and then run the python script by passing those<br>
+
+
+## Steps to follow
 1. Create a docker image to run the code
 2. Edit the config and deployment or pod kubernetes yaml files as required
 3. Run `minikube start`  to start the local kubernetes cluster
