@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-deployment
+  name: python-deployment1
   labels:
     app: python
 spec:
@@ -16,6 +16,18 @@ spec:
     spec:
       containers:
       - name: python-kubefirst
-        image: pythonkuberimage1
+        image: sri-dock-vol
         imagePullPolicy: Never
+        env:
+        - name: first_arg
+          valueFrom:
+            configMapKeyRef:
+              name: python-program
+              key: name
+        - name: second_arg
+          valueFrom:
+            configMapKeyRef:
+              name: python-program
+              key: value
+        args: ["$(first_arg)","$(second_arg)"]
         

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: python-program
+data:
+  name: "Srikar"
+  value: "This has been derived from config map"
