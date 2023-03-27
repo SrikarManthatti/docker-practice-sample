@@ -25,3 +25,7 @@ Repo is divided into following folder structure
 ## Background
 This repository may contain some sample and simple docker and kubernetes YAML files, the motivation for me behind this is to try out different things and save it here with all the steps included on how to perform the process. So it will be useful for my reference in future.
 
+### First app
+Please refer to the steps mentioned here: [steps_without_volumes.md](https://github.com/SrikarManthatti/docker-practice-sample/blob/master/how_to_run/steps_without_volumes.md)
+
+In this scenario, the main case is to use the ConfigMap in kubernetes to create some variables and access them into the pod and further send it to the python script as parameters
