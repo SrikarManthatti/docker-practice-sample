@@ -1,11 +1,13 @@
 FROM python:3.8-slim-buster
 
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /home/usr/pythonsample/
 
 COPY requirements.txt ./requirements.txt
 
-RUN pip install --upgrade pip
+COPY entrypoint.sh ./entrypoint.sh
 
-RUN pip install -r ./requirements.txt
+COPY ./scripts/kub_sample.py ./kub_sample.py
 
-CMD [ "python","./scripts/sample.py" ]
+ENTRYPOINT [ "sh","./entrypoint.sh" ]
