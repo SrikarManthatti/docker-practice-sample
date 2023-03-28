@@ -28,3 +28,9 @@ shell/entrypoint_without_volumes.sh.............................==> This file co
 9. Here if your pod is failing due to **ErrImageNeverPull** error, that means kubernetes is unable to fnd the image the you build locally. This will happen because you built the image locally, but the kubernetes will be looking for the image inside the minikube docker
 10. Run this `eval $(minikube docker-env)` and then build the image again so it will be built inside the minikube docker
 
+
+
+## Drawback of this process
+1. If we need to change our python script for some reason, or if we are in development process which needs constant code changes and improvements, this process might be a tedious one
+2. Everytime you make a change in the code, the docker image needs to be rebuild
+3. To overcome this, I will try to put the code artifact inside the `configmap` itself and pass the code as a parameter to the kub pod to execute in docker container (standard python container). (Can we follow this way, is it a good practice? need to findout)
