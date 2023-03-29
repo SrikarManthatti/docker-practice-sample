@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-deployment-second-app
+  labels:
+    app: python-second-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-second-app
+  template:
+    metadata:
+      labels:
+        app: python-second-app
+    spec:
+      containers:
+      - name: python-kubefirst
+        image: second_app
+        imagePullPolicy: Never
+        env:
+          - name: first_arg
+            valueFrom:
+              configMapKeyRef:
+                name: python-program
+                key: name
+          - name: second_arg
+            valueFrom:
+              configMapKeyRef:
+                name: python-program
+                key: value
+        volumeMounts:
+          - name: kubsample
+            mountPath: "/script"
+            readOnly: True
+        args: ["/script/kub_sample.py","$(first_arg)","$(second_arg)"]
+      volumes:
+        - name: kubsample
+          configMap: 
+            name: python-program
+            items:
+              - key: "kub_sample.py"
+                path: "kub_sample.py"
+
+        
+        
