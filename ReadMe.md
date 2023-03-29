@@ -35,4 +35,5 @@ Please refer to the steps mentioned here: [steps_without_volumes.md](https://git
 In this scenario, the main case is to use the ConfigMap in kubernetes to create some variables and access them into the pod and further send it to the python script as parameters
 
 ### Second App
+Please refer to the steps mentioned here: [Second_app.md](https://github.com/SrikarManthatti/docker-practice-sample/blob/master/how_to_run/steps_second_app.md)
 Since in the above app/scenario, everytime I change the code a new docker image needs to be built. To remove this coupling, i will try to write my code inside the configmap and pass it to the deployment.yaml
