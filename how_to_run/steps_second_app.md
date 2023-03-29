@@ -29,5 +29,5 @@ shell/entrypoint_second_app.sh.............................==> This file contain
 
 
 ## Pod Output
-(Output image)[https://github.com/SrikarManthatti/docker-practice-sample/blob/master/output_images/Second-app.png]
+!(Output image)[https://github.com/SrikarManthatti/docker-practice-sample/blob/master/output_images/Second-app.png]
 
