@@ -4,7 +4,7 @@ metadata:
   name: python-program
 data:
   name: "Srikar"
-  value: "This has been derived from config map"
+  value: "Manthatti"
 
   kub_sample.py: |
     import sys
