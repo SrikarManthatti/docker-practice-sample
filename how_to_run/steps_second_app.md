@@ -30,7 +30,7 @@ shell/entrypoint_without_volumes.sh.............................==> This file co
 
 
 ## Pod Output
-![Output image](https://github.com/SrikarManthatti/docker-practice-sample/blob/master/output_images/without_volume_image.png)
+(Output image)[https://github.com/SrikarManthatti/docker-practice-sample/blob/master/output_images/without_volume_image.png]
 
 
 ## Drawback of this process
